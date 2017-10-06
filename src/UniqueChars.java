@@ -9,12 +9,17 @@ public class UniqueChars {
     public static List uniqueCharacters(String input){
         List<Character> unique = new ArrayList<>();
 
-        for (int i = 0; i < input.length(); i++) {
-            int frequency = input.length() - (input.replaceAll(String.valueOf(input.charAt(i)), "")).length();
-            if ( frequency == 1) {
-                unique.add(input.charAt(i));
+        if (input.length() > 0) {
+            for (int i = 0; i < input.length(); i++) {
+                int frequency = input.length() - (input.replaceAll(String.valueOf(input.charAt(i)), "")).length();
+                if (frequency == 1) {
+                    unique.add(input.charAt(i));
+                }
             }
+            return unique;
         }
+
+        unique.add('0');
         return unique;
     }
 }

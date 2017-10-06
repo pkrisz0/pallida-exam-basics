@@ -21,7 +21,7 @@ class UniqueCharsTest {
 
     @Test
     void uniqueCharacters_3() {
-        assertEquals(Arrays.asList('0'), test.uniqueCharacters(""));
+        assertEquals(Arrays.asList('m'), test.uniqueCharacters("mahaha"));
     }
 
 }
