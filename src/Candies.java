@@ -5,4 +5,7 @@ public class Candies {
     public Candies() {
     }
 
+    public void setPrice(int howMuch){
+        this.price += howMuch;
+    }
 }

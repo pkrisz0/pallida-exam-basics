@@ -7,12 +7,14 @@ public class CandyShop extends ArrayList<Candies> {
     int money;
     Candy candy;
     Lollipop lollipop;
+    Candies candies;
 
     public CandyShop(int sugarStore) {
         this.sugarStore = sugarStore;
         this.money = 0;
         candy = new Candy();
         lollipop = new Lollipop();
+        candies = new Candies();
     }
 
     public static final Candies LOLLIPOP = new Lollipop(); //stg like this??
@@ -81,14 +83,15 @@ public class CandyShop extends ArrayList<Candies> {
     }
 
     public void buySugar(int howMuch){
+        this.money -= (100 * sugarStore/1000);
         this.sugarStore += howMuch;
     }
 
-    /*
-    public void raise(int howMuch){
 
+    public void raise(int howMuch){ //not working
+        candies.setPrice(howMuch);
     }
-    */
+
 
     @Override
     public String toString() {
