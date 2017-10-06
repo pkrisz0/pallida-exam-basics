@@ -1,0 +1,12 @@
+What is the difference between a function and a method? [2p]
+
+Your answer:
+
+[A function is a bunch of code you have given a name, so you can reuse it.
+A method is a function that belongs to an object. In Java, every function is
+a method.]
+
+What is the constructor? When it is used? [2p]
+[Its a method you create an object with. I.e. if you make a class in Java
+it has a default constructor. You can create constructors with parameters
+that will define the object upon creation.]
