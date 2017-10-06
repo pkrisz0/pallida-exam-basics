@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class CandyShop extends ArrayList<Candies> {
 
@@ -34,7 +35,6 @@ public class CandyShop extends ArrayList<Candies> {
             for (int i = 0; i < this.size(); i++) {
                 if (this.get(i) instanceof Lollipop){
                     candieCount++;
-                    this.remove();
                 }
             }
         } else if (input.equals("Candy")){
@@ -47,14 +47,38 @@ public class CandyShop extends ArrayList<Candies> {
         return candieCount;
     }
 
+    public List<Integer> candiesPlaces(String input){
+        List<Integer> candiePlaces= new ArrayList<>();
+        if (input.equals("Candy")) {
+            for (int i = 0; i < this.size(); i++) {
+                if (this.get(i) instanceof Candy) {
+                    candiePlaces.add(i);
+                }
+            }
+        } else {
+            for (int i = 0; i < this.size(); i++) {
+                if (this.get(i) instanceof Lollipop) {
+                    candiePlaces.add(i);
+                }
+            }
+        }
+        return candiePlaces;
+    }
 
-    public void sell(String howToReferenceThatDamnFinalObject ,int amount){
+
+    public void sell(String howToReferenceThatDamnFinalObject, int amount){
         if (howToReferenceThatDamnFinalObject.equals("CandyShop.CANDY")) {
             this.money += candy.price;
-
+            for (int i = 0; i < amount; i++) {
+                int n = candiesPlaces("Candy").get(i);
+                this.remove(n);
+            }
         } else {
             this.money += lollipop.price;
-
+            for (int i = 0; i < amount; i++) {
+                int n = candiesPlaces("Anything").get(i);
+                this.remove(n);
+            }
         }
     }
 

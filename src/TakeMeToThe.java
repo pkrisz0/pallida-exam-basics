@@ -18,7 +18,7 @@ public class TakeMeToThe {
         // Should print out:
         // "Invetory: 1 candies, 2 lollipops, Income: 20$, Sugar: 240gr"
 
-        /*
+
         candyShop.raise(5);
         candyShop.sell(CandyShop.LOLLIPOP, 1);
         System.out.println(candyShop);
@@ -28,6 +28,6 @@ public class TakeMeToThe {
         System.out.println(candyShop);
         // Should print out:
         // "Invetory: 1 candies, 1 lollipops, Income: 5$, Sugar: 540gr"
-        */
+        
     }
 }
