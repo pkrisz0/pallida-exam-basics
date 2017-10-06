@@ -8,7 +8,6 @@ public class CandyShop extends ArrayList<Candies> {
     Candy candy;
     Lollipop lollipop;
 
-
     public CandyShop(int sugarStore) {
         this.sugarStore = sugarStore;
         this.money = 0;
@@ -37,7 +36,7 @@ public class CandyShop extends ArrayList<Candies> {
                     candieCount++;
                 }
             }
-        } else if (input.equals("Candy")){
+        } else {
             for (int i = 0; i < this.size(); i++) {
                 if (this.get(i) instanceof Candy){
                     candieCount++;
@@ -65,7 +64,6 @@ public class CandyShop extends ArrayList<Candies> {
         return candiePlaces;
     }
 
-
     public void sell(Object object, int amount){
         if (object == CandyShop.CANDY) {
             this.money += candy.price;
@@ -82,10 +80,15 @@ public class CandyShop extends ArrayList<Candies> {
         }
     }
 
-
     public void buySugar(int howMuch){
         this.sugarStore += howMuch;
     }
+
+    /*
+    public void raise(int howMuch){
+
+    }
+    */
 
     @Override
     public String toString() {
@@ -102,7 +105,4 @@ public class CandyShop extends ArrayList<Candies> {
         sb.append("gr");
         return sb.toString();
     }
-
-    //"Invetory: 1 candies, 2 lollipops, Income: 20$, Sugar: 285gr"
-
 }
