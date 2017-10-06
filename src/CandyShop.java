@@ -19,8 +19,8 @@ public class CandyShop extends ArrayList<Candies> {
     public static final Candies LOLLIPOP = new Lollipop(); //stg like this??
     public static final Candies CANDY = new Candy(); //probably not a new instance idk
 
-    public void createSweets(String input){
-        if (input.equals("CandyShop.CANDY")){
+    public void createSweets(Object object){
+        if (object == CandyShop.CANDY){
             this.add(new Candy());
             this.sugarStore -= candy.sugar;
         } else {
@@ -66,8 +66,8 @@ public class CandyShop extends ArrayList<Candies> {
     }
 
 
-    public void sell(String howToReferenceThatDamnFinalObject, int amount){
-        if (howToReferenceThatDamnFinalObject.equals("CandyShop.CANDY")) {
+    public void sell(Object object, int amount){
+        if (object == CandyShop.CANDY) {
             this.money += candy.price;
             for (int i = 0; i < amount; i++) {
                 int n = candiesPlaces("Candy").get(i);
