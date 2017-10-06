@@ -4,17 +4,24 @@ public class CandyShop extends ArrayList<Candies> {
 
     int sugarStore;
     int money;
+    Candy candy;
+    Lollipop lollipop;
+
 
     public CandyShop(int sugarStore) {
         this.sugarStore = sugarStore;
         this.money = 0;
+        candy = new Candy();
+        lollipop = new Lollipop();
     }
 
     public void createSweets(String input){
         if (input.equals("CandyShop.CANDY")){
             this.add(new Candy());
+            this.sugarStore -= candy.sugar;
         } else {
             this.add(new Lollipop());
+            this.sugarStore -= lollipop.sugar;
         }
     }
 
