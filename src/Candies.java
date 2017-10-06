@@ -10,9 +10,4 @@ public class Candies {
         this.sugar = sugar;
     }
 
-    public void inflation(int withHowMuch){
-        this.price += withHowMuch;
-    }
-
-
 }
