@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,21 +11,29 @@ public class FavouriteAnimals {
 
         if(args.length == 0){
             System.out.println("```java FavouriteAnimals [animal] [animal]```");
-        } else if (args.length != 1) {
-            add(args[0]);
+        } else if (args.length > 0) {
+            add(args);
         }
     }
 
-    public static void add(String input){
+    public static void add(String[] input){
         Path favAnims = Paths.get("C:/greenfox/pallida-exam-basics/favouriteanimals/favourites.txt");
-        List<String> animals = new ArrayList();
+        List<String> animals = null;
 
-        if (!animals.contains(input)){
-            animals.add(input);
+        try {
+            animals = Files.readAllLines(favAnims);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        for (int i = 0; i < input.length; i++) {
+            if (!animals.contains(input)){
+                animals.add(input[i]);
+            }
         }
 
         try {
-            Files.write(favAnims, animals);
+            Files.write(favAnims, animals, StandardOpenOption.APPEND);
         } catch (IOException e){
             System.out.println("Something went wrong.");
         }
