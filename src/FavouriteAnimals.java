@@ -18,16 +18,17 @@ public class FavouriteAnimals {
 
     public static void add(String[] input){
         Path favAnims = Paths.get("C:/greenfox/pallida-exam-basics/favouriteanimals/favourites.txt");
-        List<String> animals = null;
+        List<String> animals = new ArrayList<>();
+        List<String> previously = new ArrayList<>();
 
         try {
-            animals = Files.readAllLines(favAnims);
+            previously = Files.readAllLines(favAnims);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         for (int i = 0; i < input.length; i++) {
-            if (!animals.contains(input)){
+            if (!previously.contains(input[i])) {
                 animals.add(input[i]);
             }
         }
