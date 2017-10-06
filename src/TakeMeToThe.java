@@ -12,22 +12,21 @@ public class TakeMeToThe {
         // Should print out:
         // Invetory: 2 candies, 2 lollipops, Income: 0$, Sugar: 240gr
 
-
         candyShop.sell(CandyShop.CANDY, 1);
         System.out.println(candyShop);
         // Should print out:
         // "Invetory: 1 candies, 2 lollipops, Income: 20$, Sugar: 240gr"
-
 
         candyShop.raise(5);
         candyShop.sell(CandyShop.LOLLIPOP, 1);
         System.out.println(candyShop);
         // Should print out:
         // "Invetory: 1 candies, 1 lollipops, Income: 35$, Sugar: 240gr"
+
         candyShop.buySugar(300);
         System.out.println(candyShop);
         // Should print out:
         // "Invetory: 1 candies, 1 lollipops, Income: 5$, Sugar: 540gr"
-        
+
     }
 }

@@ -89,9 +89,9 @@ public class CandyShop extends ArrayList<Candies> {
 
 
     public void raise(int howMuch){ //not working
-        candies.setPrice(howMuch);
+            candy.setPrice(howMuch);
+            lollipop.setPrice(howMuch);
     }
-
 
     @Override
     public String toString() {
